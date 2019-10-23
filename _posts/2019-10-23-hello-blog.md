@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Hello Blog'
-date: 2010-10-23
+date: 2019-10-23
 author: downeyking
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: jekyll
