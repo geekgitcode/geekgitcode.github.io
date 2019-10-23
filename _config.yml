@@ -1,5 +1,5 @@
 # Site settings 配置站点
-title: 'DowneyKing | DowneyKing Blog'
+title: 'DowneyKing Blog'
 description: 'downeyking的个人blog'
 keyword: 'downeyking blog'
 url: '' # your host
@@ -21,12 +21,13 @@ nav:
 
 # Footer
 footer:
-  since: 2017
+  since: 2019
 
 # Author 配置博主信息
 author: 'DowneyKing'
 nickname: ''
-bio: 'SCUT Software Engineering 在读'
+bio: 'SCUT 
+        Software Engineering 在读'
 avatar: '/assets/img/profile.png'
 
 # Search
