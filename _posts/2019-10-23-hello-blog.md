@@ -3,7 +3,7 @@ layout: post
 title: 'Hello Blog'
 date: 2019-10-23
 author: downeyking
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+cover: 'https://desk-fd.zol-img.com.cn/t_s960x600c5/g1/M04/00/00/ChMljV2f36uIMt5fAAMVh_EEdHYAAP7rADbdK8AAxWf977.jpg'
 tags: jekyll
 ---
 
