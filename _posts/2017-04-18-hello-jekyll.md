@@ -3,12 +3,10 @@ layout: post
 title: 'Hello Jekyll'
 date: 2017-04-18
 author: Jekyll
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'    //图片的链接
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'   
 tags: jekyll
 ---
 
-color   #6c6c6d
-bg color #f3f4f7
 
 > Transform your plain text into static websites and blogs.
 
