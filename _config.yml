@@ -1,5 +1,5 @@
 # Site settings 配置站点
-title: 'DowneyKing Blog'
+title: 'downeyking blog'
 description: 'downeyking的个人blog'
 keyword: 'downeyking blog'
 url: '' # your host
@@ -33,7 +33,7 @@ avatar: '/assets/img/profile.png'
 search: true
 
 # Night mode
-nightMode: true
+nightMode: false
 
 # Comments 评论功能
 comments:
