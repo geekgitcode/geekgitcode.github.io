@@ -3,7 +3,7 @@ layout: post
 title: 'HELLO BLOG'
 date: 2019-10-20
 author: downeyking
-cover: 'http://img3.imgtn.bdimg.com/it/u=2521264465,2666829798&fm=26&gp=0.jpg'
+cover: 'https://sm.ms/image/TjhCaGXo15bHnrS'
 tags: ABOUT
 ---
 
