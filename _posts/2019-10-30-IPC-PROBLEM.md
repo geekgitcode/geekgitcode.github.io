@@ -3,7 +3,7 @@ layout: post
 title: 'IPC PROBLEM'
 date: 2019-10-30
 author: downeyking
-cover: 'https://sm.ms/image/BHa7FuelxwUsKIb'    
+cover: 'https://i.loli.net/2019/12/31/BHa7FuelxwUsKIb.jpg'    
 tags: OS
 ---
 
