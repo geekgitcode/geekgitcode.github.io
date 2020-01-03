@@ -21,7 +21,7 @@ nav:
 
 # Footer
 footer:
-  since: 2019
+  since: 2019-2020
 
 # Author 配置博主信息
 author: 'DowneyKing'
@@ -58,7 +58,7 @@ postPatterns: 'circuitBoard'
 sns:
   twitter: '//www.twitter.com/downeykking'
   instagram: '//www.instagram.com/downeykking'
-  github: '//github.com/downeykking'
+  #github: '//github.com/downeykking'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
