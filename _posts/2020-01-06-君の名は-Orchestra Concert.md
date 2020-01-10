@@ -11,15 +11,17 @@ tags: music
 
 
 
-​						    bingo！今天分享youtube上绝佳音乐会现场，每一次听都有不一样的感受。
-
-​	
+bingo！今天分享youtube上绝佳音乐会现场，每一次听都有不一样的感受。
 
 <img src=" https://i.loli.net/2020/01/10/qyzPZc93pIfnrKN.png" style="zoom:67%;" />
 
 
 
+
+
 <img src=" https://i.loli.net/2020/01/10/FHz7UqayJ1gmiRN.png" style="zoom: 39%;" />
+
+
 
 
 
@@ -29,7 +31,9 @@ tags: music
 
 ​	
 
-<iframe height=498 width=510 src="https://www.youtube.com/watch?v=M40SBBsSCIA" frameborder=0 allowfullscreen></iframe>
+[youtube观看地址](https://www.youtube.com/watch?v=M40SBBsSCIA)
+
+
 
 ------
 
@@ -41,6 +45,6 @@ tags: music
 
 
 
-​														          " 我来看你了，你在好远的地方啊 “
+"我来看你了，你在好远的地方啊"
 
 
