@@ -18,6 +18,8 @@ baseurl: ''
 nav:
   home: '/'
   tags: '/tags.html'
+  archive: '/archive.html'  
+  about: '/about.html'
 
 # Footer
 footer:
