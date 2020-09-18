@@ -39,23 +39,24 @@ tags: ML-AndrewNg
 
 7. $J\left( {\theta_{0}},{\theta_{1}}...{\theta_{n}} \right)$ 返回值，标量
 
-8. 对于$J\left( {\theta_{0}},{\theta_{1}}...{\theta_{n}} \right)=\frac{1}{2m}\sum\limits_{i=1}^{m}{{{\left( h_{\theta} \left({x}^{\left( i \right)} \right)-{y}^{\left( i \right)} \right)}^{2}}}$, 由7知 $J$ 返回的应该是个标量，所以在使用向量化整体计算时需要注意几个点:
+8. 对于$J\left( {\theta_0},{\theta_1} \cdots {\theta_n} \right)=\frac1{2m}\sum\limits_{i=1}^m\left( h_\theta \left(x^{\left( i\right)} \right)-y^{\left( i \right)} \right)^2$, 由7知 $J$ 返回的应该是个标量，所以在使用向量化整体计算时需要注意几个点:
 
-   第一种计算方式 $J = \frac 1{2*m} * np.sum(np.power(h_\theta(x)-y),2)$
+   第一种计算方式 $J = \frac 1{2m} * np.sum(np.power(h_\theta(x)-y),2)$
 
    $h_\theta(x)$ 和 $y$ 都是$(m,1)$向量，所以二者做幂运算也是$(m,1)$向量，使用 $np.sum()$对列向量求和返回值
 
-   第二种计算方式是 $J = \frac 1{2*m} * np.dot((h_\theta(x)-y)^T,(h_\theta(x)-y))$
+   第二种计算方式是 $J = \frac 1{2m} * np.dot((h_\theta(x)-y)^T,(h_\theta(x)-y))$
 
    $(h_\theta(x)-y)^T$是$(1,m)$向量，$(h_\theta(x)-y)$是$(m,1)$向量，则 $(1,m)(m,1) \sim (1,1)$，返回$(1,1)$向量
 
 9. 在对数据进行预处理时，我们一般对$X$插入一列$x_0 = \left[ \begin{matrix}   {1}  \\   {1}  \\   {\vdots}  \\   {1}  \\\end{matrix} \right]$用来匹配 $\theta_0$
 
-10. 
+   
 
-    
+   
 
-    
+   
+
 
 
 
