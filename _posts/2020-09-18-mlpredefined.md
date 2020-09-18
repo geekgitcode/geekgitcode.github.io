@@ -49,9 +49,17 @@ tags: ML-AndrewNg
 
    $(h_\theta(x)-y)^T$是$(1,m)$向量，$(h_\theta(x)-y)$是$(m,1)$向量，则 $(1,m)(m,1) \sim (1,1)$，返回$(1,1)$向量
 
-9. 在对数据进行预处理时，我们一般对$X$插入一列$x_0 = \left[ \begin{matrix}   {1}  \\   {1}  \\   {\vdots}  \\   {1}  \\\end{matrix} \right]$用来匹配 $\theta_0$
+9. 在对数据进行预处理时，我们一般对$X$插入一列 $
+x_0 = 
+\begin{bmatrix}   
+{1}  \\   
+{1}  \\   
+{\vdots}  \\   
+{1}  \\
+\end{bmatrix}
+$用来匹配 $\theta_0$
 
-   
+
 
    
 
