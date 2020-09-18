@@ -7,11 +7,11 @@ cover: 'https://gitee.com/GoPrime/imagecloud/raw/master/bgcover/ml-andrewng.png'
 tags: ML-AndrewNg
 ---
 
-> Exercise-1 Linear Regression with One Variable
+> Exercise-1 Linear Regression
 
 
 
-### 练习一：单变量线性回归 （Linear Regression with One Variable）
+### 练习1.1：单变量线性回归 （Linear Regression with One Variable）
 
 在进入练习一之前，请确保你已经了解的文章：所定义的各变量维度
 
@@ -139,3 +139,164 @@ plt.show()
 ```
 
 <img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20200918122638172.png" alt="image-20200918122638172" style="zoom:65%;" />
+
+
+
+### 练习1.2：多变量线性回归 （Linear Regression with Multiple Variable）
+
+和练习一并无较大差异，注意Feature Normalization即可
+
+```python
+# 特征归一化
+def featureNormalize(X):
+    # axis = 0：压缩行，对各列求均值，返回 1*n 矩阵
+    mu = np.mean(X, axis=0)
+    sigma = np.std(X, axis=0)
+    x_norm = np.divide(X - mu, sigma)
+    return x_norm, mu, sigma
+```
+
+
+
+全部代码：
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 让numpy不用科学计数法显示
+np.set_printoptions(formatter={'all': lambda x: str(x)}, threshold=100)
+
+data = np.loadtxt('ex1data2.txt', delimiter=',')
+X = data[:, :-1]  # (47,2)
+y = data[:, -1].reshape(-1, 1)  # (47,1)
+
+
+# 特征归一化
+def featureNormalize(X):
+    # axis = 0：压缩行，对各列求均值，返回 1*n 矩阵
+    mu = np.mean(X, axis=0)
+    sigma = np.std(X, axis=0)
+    x_norm = np.divide(X - mu, sigma)
+    return x_norm, mu, sigma
+
+
+X, mu, sigma = featureNormalize(X)
+X = np.insert(X, 0, np.ones(1), axis=1)  # 在x0插入一列全1
+theta = np.zeros((X.shape[1], 1), dtype=np.float)  # theta个数为X的特征值个数 (3,1)
+
+
+def computerCost(X, y, theta):
+    m = X.shape[0]
+    h = np.dot(X, theta)  # (m,n) (n,1)  ~ (m,1)
+    J = 1 / (2 * m) * np.sum(np.power(h - y, 2))  # (m,1)进行power还是(m,1) sum对列向量求和返回值
+    return J
+
+    # 65591548106.45744
+
+
+def gradientDescent(X, y, theta, alpha, iters):
+    m = X.shape[0]
+    cost = np.zeros(iters)
+    for i in range(iters):
+        h = np.dot(X, theta)  # (m,1)
+        # (n,1) ~ (n,1) - (n,m)(m,1)
+        theta = theta - (alpha / m) * np.dot(np.transpose(X), h - y)
+        cost[i] = computerCost(X, y, theta)
+    return theta, cost
+
+
+alpha = 0.01
+iters = 400
+finalTheta, cost = gradientDescent(X, y, theta, alpha, iters)
+plt.plot(np.arange(len(cost)), cost, '-b', lw=2)
+plt.xlabel('Number of iterations')
+plt.ylabel('Cost J')
+plt.show()
+
+print('Theta computed from gradient descent: ', finalTheta)
+'''
+[[334302.06399327697]
+ [99411.4494735893]
+ [3267.012854065695]]
+'''
+
+X_test = np.array([1650, 3])
+X_test = np.divide(X_test - mu, sigma)  # 归一化
+X_test = np.hstack((1, X_test))
+price = np.dot(X_test, finalTheta)
+print('Predicted price of a 1650 sq-ft, 3 br house (using gradient descent): ', price)
+'''
+[289221.5473712181]
+'''
+```
+
+Convergence of gradient descent with an appropriate learning rate：
+
+<img src="C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200918183959658.png" alt="image-20200918183959658" style="zoom:67%;" />
+
+### 练习1.3：正规方程 （Normal Equation）
+
+```python
+import numpy as np
+
+data = np.loadtxt('ex1data2.txt', delimiter=',')
+X = data[:, :-1]  # (47,2)
+y = data[:, -1].reshape(-1, 1)  # (47,1)
+X = np.insert(X, 0, np.ones(1), axis=1)  # 在x0插入一列全1
+
+
+def normalEqn(X, y):
+    theta = (np.dot(np.linalg.inv(np.dot(np.transpose(X), X)), np.transpose(X))).dot(y)
+    return theta
+
+
+theta = normalEqn(X, y)
+print('Theta computed from the normal equations: ', theta)
+'''
+[[89597.9095428 ]
+ [  139.21067402]
+ [-8738.01911233]]
+'''
+
+# Estimate the price of a 1650 sq-ft, 3 br house
+X_test = np.array([1, 1650, 3])
+price = X_test.dot(theta)
+print('Predicted price of a 1650 sq-ft, 3 br house (using normal equations): ', price)
+'''
+[293081.4643349]
+'''
+```
+
+与递归下降相比，正规方程的误差在可接受范围内
+
+$\theta ={{\left( {X^{T}}X \right)}^{-1}}{X^{T}}y$ 的推导过程：
+
+$J\left( \theta  \right)=\frac{1}{2m}\sum\limits_{i=1}^{m}{{{\left( {h_{\theta}}\left( {x^{(i)}} \right)-{y^{(i)}} \right)}^{2}}}$
+其中：${h_{\theta}}\left( x \right)={\theta^{T}}X={\theta_{0}}{x_{0}}+{\theta_{1}}{x_{1}}+{\theta_{2}}{x_{2}}+...+{\theta_{n}}{x_{n}}$
+
+将向量表达形式转为矩阵表达形式，则有$J(\theta )=\frac{1}{2}{{\left( X\theta -y\right)}^{2}}$ ，其中$X$为$m$行$n$列的矩阵（$m$为样本个数，$n$为特征个数），$\theta$为$n$行1列的矩阵，$y$为$m$行1列的矩阵，对$J(\theta )$进行如下变换
+
+$J(\theta )=\frac{1}{2}{{\left( X\theta -y\right)}^{T}}\left( X\theta -y \right)$
+
+$=\frac{1}{2}\left( {{\theta }^{T}}{{X}^{T}}-{{y}^{T}} \right)\left(X\theta -y \right)$
+    
+$=\frac{1}{2}\left( {{\theta }^{T}}{{X}^{T}}X\theta -{{\theta}^{T}}{{X}^{T}}y-{{y}^{T}}X\theta -{{y}^{T}}y \right)$
+
+接下来对$J(\theta )$偏导，需要用到以下几个矩阵的求导法则:
+
+$\frac{dAB}{dB}={{A}^{T}}$ 
+
+$\frac{d{{X}^{T}}AX}{dX}=2AX$                            
+
+所以有:
+
+$\frac{\partial J\left( \theta  \right)}{\partial \theta }=\frac{1}{2}\left(2{{X}^{T}}X\theta -{{X}^{T}}y -{}({{y}^{T}}X )^{T}-0 \right)$
+
+​          $=\frac{1}{2}\left(2{{X}^{T}}X\theta -{{X}^{T}}y -{{X}^{T}}y -0 \right)  $
+​    
+​          $={{X}^{T}}X\theta -{{X}^{T}}y$
+
+ 令$\frac{\partial J\left( \theta  \right)}{\partial \theta }=0$,
+
+则有$\theta ={{\left( {X^{T}}X \right)}^{-1}}{X^{T}}y$
