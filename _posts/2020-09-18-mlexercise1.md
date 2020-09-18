@@ -17,9 +17,9 @@ tags: ML-AndrewNg
 
 练习1用到的公式：
 
-代价函数    $J \left( \theta_0, \theta_1 \right) = \frac{1}{2m}\sum\limits_{i=1}^m \left( h_{\theta}(x^{(i)})-y^{(i)} \right)^{2}$
+代价函数    $J \left(\theta_0, \theta_1 \right) = \frac1{2m}\sum\limits_{i=1}^m\left( h_\theta(x^{(i)})-y^{(i)}\right)^2$
 
-代价函数的偏导数    $\frac\partial{\partial\theta}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limits_{i=1}^{m}{\left( \left( h_\theta(x^{(i)})-y^{(i)} \right)\cdot x^{(i)} \right)}$
+代价函数的偏导数    $\frac\partial{\partial\theta}J(\theta_0,\theta_1)=\frac1m\sum\limits_{i=1}^m\left( \left(h_\theta(x^{(i)})-y^{(i)}\right)\cdot x^{(i)}\right)$
 
 使用梯度下降求代价函数的最小值
 
