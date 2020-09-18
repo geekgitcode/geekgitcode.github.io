@@ -24,7 +24,7 @@ tags: ML-AndrewNg
 使用梯度下降求代价函数的最小值
 
 **Repeat {**
-​           	   $\theta:=\theta-a\frac{1}{m}\sum\limits_{i=1}^{m}\left(\left(h_\theta(x^{(i)})-y^{(i)}\right)\cdot x^{(i)} \right)$
+​           	   $\theta:=\theta-a\frac1m\sum\limits_{i=1}^m\left(\left(h_\theta(x^{(i)})-y^{(i)}\right)\cdot x^{(i)}\right)$
 ​               **}**
 
 代码：
