@@ -272,31 +272,31 @@ print('Predicted price of a 1650 sq-ft, 3 br house (using normal equations): ', 
 
 $\theta ={{\left( {X^{T}}X \right)}^{-1}}{X^{T}}y$ 的推导过程：
 
-$J\left( \theta  \right)=\frac{1}{2m}\sum\limits_{i=1}^{m}{{{\left( {h_{\theta}}\left( {x^{(i)}} \right)-{y^{(i)}} \right)}^{2}}}$
-其中：${h_{\theta}}\left( x \right)={\theta^{T}}X={\theta_{0}}{x_{0}}+{\theta_{1}}{x_{1}}+{\theta_{2}}{x_{2}}+...+{\theta_{n}}{x_{n}}$
+$J \left(\theta\right) = \frac1{2m}\sum\limits_{i=1}^m\left( h_\theta(x^{(i)})-y^{(i)}\right)^2$
+其中：$h_\theta(x)=\theta^Tx=\theta_0x_0+\theta_1x_1+\cdots+\theta_nx_n$
 
-将向量表达形式转为矩阵表达形式，则有$J(\theta )=\frac{1}{2}{{\left( X\theta -y\right)}^{2}}$ ，其中$X$为$m$行$n$列的矩阵（$m$为样本个数，$n$为特征个数），$\theta$为$n$行1列的矩阵，$y$为$m$行1列的矩阵，对$J(\theta )$进行如下变换
+将向量表达形式转为矩阵表达形式，则有$J(\theta)=\frac{1}{2}\left( X\theta -y\right)^2$ ，其中$X$为$m$行$n$列的矩阵（$m$为样本个数，$n$为特征个数），$\theta$为$n$行1列的矩阵，$y$为$m$行1列的矩阵，对$J(\theta )$进行如下变换
 
-$J(\theta )=\frac{1}{2}{{\left( X\theta -y\right)}^{T}}\left( X\theta -y \right)$
+$J(\theta )=\frac{1}{2}\left( X\theta -y\right)^T\left( X\theta -y \right)$
 
-$=\frac{1}{2}\left( {{\theta }^{T}}{{X}^{T}}-{{y}^{T}} \right)\left(X\theta -y \right)$
+$=\frac{1}{2}\left( \theta^TX^T-y^T \right)\left(X\theta -y \right)$
     
-$=\frac{1}{2}\left( {{\theta }^{T}}{{X}^{T}}X\theta -{{\theta}^{T}}{{X}^{T}}y-{{y}^{T}}X\theta -{{y}^{T}}y \right)$
+$=\frac{1}{2}\left(\theta^TX^TX\theta - \theta^TX^Ty-y^TX\theta -y^Ty\right)$
 
 接下来对$J(\theta )$偏导，需要用到以下几个矩阵的求导法则:
 
-$\frac{dAB}{dB}={{A}^{T}}$ 
+$\frac{dAB}{dB}=A^T$ 
 
-$\frac{d{{X}^{T}}AX}{dX}=2AX$                            
+$\frac{dX^TAX}{dX}=2AX$                            
 
 所以有:
 
-$\frac{\partial J\left( \theta  \right)}{\partial \theta }=\frac{1}{2}\left(2{{X}^{T}}X\theta -{{X}^{T}}y -{}({{y}^{T}}X )^{T}-0 \right)$
+$\frac{\partial J\left( \theta  \right)}{\partial \theta }=\frac{1}{2}\left(2X^TX\theta -X^Ty -(y^TX)^{T}-0 \right)$
 
-​          $=\frac{1}{2}\left(2{{X}^{T}}X\theta -{{X}^{T}}y -{{X}^{T}}y -0 \right)  $
+​          $=\frac{1}{2}\left(2X^TX\theta -X^Ty -X^Ty -0 \right)  $
 ​    
-​          $={{X}^{T}}X\theta -{{X}^{T}}y$
+​          $=X^TX\theta -X^Ty$
 
  令$\frac{\partial J\left( \theta  \right)}{\partial \theta }=0$,
 
-则有$\theta ={{\left( {X^{T}}X \right)}^{-1}}{X^{T}}y$
+则有$\theta =\left( X^TX \right)^{-1}X^Ty$
