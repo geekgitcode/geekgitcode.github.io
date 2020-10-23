@@ -4,7 +4,7 @@ title: "Orchestra Concert/君の名は"
 date: 2020-01-06
 author: downeyking
 cover: 'https://i.loli.net/2020/01/10/xy1vjPdcaWbNuwI.png'
-tags: music
+tags: Music
 ---
 
 >  The joint concert between RADWIMPS and the Tokyo Philharmonic Orchestra. 
