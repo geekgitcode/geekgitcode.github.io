@@ -12,11 +12,13 @@ tags: LeetCode
 
 
 
+#### 区间问题一般要预排序 排序cmp函数见 $basic.md$
+
 #### 重叠区间的合并
 
 一个区间可以表示为`[start,end]`，为了清晰起见，我们选择按`start`排序。
 
-<img src="C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201102155840219.png" alt="image-20201102155840219" style="zoom:50%;" />
+<img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20201102155840219.png" alt="image-20201102155840219" style="zoom:50%;" />
 
 显然，对于几个相交区间合并后的结果区间`x`，`x.start`一定是这些相交区间中`start`最小的，`x.end`一定是这些相交区间中`end`最大的。
 
@@ -45,7 +47,7 @@ tags: LeetCode
 
 2. 与 x 相交的区间必然会与 x 的`end`相交；如果一个区间不想与 x 的`end`相交，它的`start`必须要大于（或等于）x 的`end`
 
-   <img src="C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201102160259218.png" alt="image-20201102160259218" style="zoom:50%;" />
+   <img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20201102160259218.png" alt="image-20201102160259218" style="zoom:50%;" />
 
 相关题目：
 [435. 无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/)
@@ -78,7 +80,7 @@ if b2 >= a1 and a2 >= b1:
 
 寻找交集的共同点
 
-<img src="C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201102170228880.png" alt="image-20201102170228880" style="zoom:50%;" />
+<img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20201102170228880.png" alt="image-20201102170228880" style="zoom:50%;" />
 
 指针 $i,j$ 的前进
 
