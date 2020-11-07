@@ -1,11 +1,11 @@
 ---
-
 layout: post
 title: '树状数组'
 date: 2020-10-28
 author: downeyking
 cover: 'https://gitee.com/GoPrime/imagecloud/raw/master/bgcover/leetcode.jpg'
 tags: LeetCode
+
 ---
 
 > Binary Index Tree
@@ -71,6 +71,7 @@ tags: LeetCode
        } 
    } 
    ```
+
    <img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20201028193112676.png" alt="image-20201028193112676" style="zoom:50%;" />
 
    
@@ -93,8 +94,6 @@ tags: LeetCode
        return 0;
    }
    ```
-
-
 
 
 
@@ -147,6 +146,39 @@ for (int i = 1; i <= n; ++i){
 }
 ```
 
+封装成类
+
+```
+class BIT {
+private:
+    vector<int> tree;
+    int n;
+
+public:
+    BIT(int _n): n(_n), tree(_n + 1) {}
+
+    static constexpr int lowbit(int x) {
+        return x & (-x);
+    }
+
+    void update(int x, int d) {
+        while (x <= n) {
+            tree[x] += d;
+            x += lowbit(x);
+        }
+    }
+
+    int query(int x) const {
+        int ans = 0;
+        while (x) {
+            ans += tree[x];
+            x -= lowbit(x);
+        }
+        return ans;
+    }
+};
+```
+
 
 
 #### **相关题目：**
@@ -159,10 +191,13 @@ for (int i = 1; i <= n; ++i){
 
 [LeetCode](https://leetcode-cn.com/tag/binary-indexed-tree/)
 
+[315. 计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
+
 #### 逆序对模板 （对于maxn较大的开不了数组要进行离散化）
 
 ```c++
-//也可以用我们归并排序模板在交换的时候ans+=m-i
+//输出逆序对个数时比较容易 直接归并排序模板在交换的时候ans+=m-i+1
+//输出位置时要绑定index并且在<=的情况下再ans+=j-m-1 见leetcode 315
 
 #include<cstdio>
 #include<cstring>
@@ -212,7 +247,10 @@ int main(){
 #### 参考资料
 
 [知乎](https://zhuanlan.zhihu.com/p/93795692)
+
 [geeksforgeeks](https://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/)
+
 [youtube](https://www.youtube.com/watch?v=CWDQJGaN1gY)
+
 [github](https://github.com/mission-peace/interview/blob/master/src/com/interview/tree/FenwickTree.java)
 
