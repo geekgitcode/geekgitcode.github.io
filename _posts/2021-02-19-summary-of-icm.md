@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2021美赛总结"
-date: 2020-02-10
+date: 2021-02-19
 author: downeyking
 cover: 'https://i.loli.net/2020/01/10/oWigTw6IzbGr9cf.png'
 tags: 数学建模
