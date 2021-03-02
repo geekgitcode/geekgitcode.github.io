@@ -40,7 +40,7 @@ tags: 数学建模
 
 由于和sw一起打过一场亚太，所以在建模的整个流程上算是具有了一定的经验。为了更好研读，大家约定好了每周三天一起使用腾讯会议研究O奖论文。主要是研究MCM/ICM各类型的题对应的一些模型，还有文字说理过程，他们的格式，表述，和插图等等方面。总结了一些经验：
 
-![image-20210302153430495](C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210302153430495.png)
+<img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210302153430495.png" alt="image-20210302153430495" style="zoom:67%;" />
 
 1. 我们对于每篇优秀的O奖论文都进行了详细的分析，感觉收获很大！（早几年的优秀O奖评委会给出他们获得O奖的具体原因。或是说理详实，或是模型很适合。非常建议看！
 
@@ -103,17 +103,17 @@ tags: 数学建模
 
 我们通过O奖论文研读和自己的学习最终确定了选题集中于CEF三大题型上。在美赛正式开始前5天进行了一次全真模拟练习，题目为美赛2019F。这次模拟为美赛正赛我们的进度安排打下了良好的基础。
 
-![image-20210302153408248](C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210302153408248.png)
+<img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210302153408248.png" alt="image-20210302153408248" style="zoom:50%;" />
 
-![image-20210302153352030](C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210302153352030.png)
+<img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210302153352030.png" alt="image-20210302153352030" style="zoom:50%;" />
 
 ### 美赛正赛
 
-![image-20210302153157686](C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210302153157686.png)
+<img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210302153157686.png" alt="image-20210302153157686" style="zoom: 50%;" />
 
-![image-20210302153512466](C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210302153512466.png)
+<img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210302153512466.png" alt="image-20210302153512466" style="zoom:50%;" />
 
-![image-20210302153539563](C:%5CUsers%5C74116%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210302153539563.png)
+<img src="https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210302153539563.png" alt="image-20210302153539563" style="zoom:50%;" />
 
 ### 最终结果
 
