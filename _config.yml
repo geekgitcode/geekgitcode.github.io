@@ -23,13 +23,13 @@ nav:
 
 # Footer
 footer:
-  since: 2020
+  since: 2021
 
 # Author 配置博主信息
 author: 'downeyking'
 nickname: ''
 bio: '吹灭读书灯 一身都是月'
-avatar: '/assets/img/profile.png'
+avatar: '/assets/img/new_profile.png'
 
 # Search
 search: true
