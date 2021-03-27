@@ -78,7 +78,7 @@ tanh为双曲正切函数，其英文读作Hyperbolic Tangent。tanh和 sigmoid 
 
 #### Leaky ReLU, PReLU（Parametric Relu）, RReLU（Random ReLU）
 
-为了防止模型的‘Dead’情况，后人将x<0部分并没有直接置为0，而是给了一个很小的负数梯度值![[公式]](https://www.zhihu.com/equation?tex=%5Calpha)。
+为了防止模型的‘Dead’情况，后人将x<0部分并没有直接置为0，而是给了一个很小的负数梯度值 $\alpha$。
 
 **Leaky ReLU**
 
@@ -86,9 +86,9 @@ $f(x)=\left\{\begin{array}{ll}x, & \text { if } x \geq 0 \\ \alpha x, & \text { 
 
 $\alpha$ 为常数，一般设置 0.01。这个函数通常比 Relu 激活函数效果要好，但是效果不是很稳定，所以在实际中 Leaky ReLu 使用的并不多。
 
-**PRelu（参数化修正线性单元）** 中的![[公式]](https://www.zhihu.com/equation?tex=%5Calpha+)作为一个可学习的参数，会在训练的过程中进行更新。
+**PRelu（参数化修正线性单元）** 中的 $\alpha$ 作为一个可学习的参数，会在训练的过程中进行更新。
 
-**RReLU（随机纠正线性单元）**也是Leaky ReLU的一个变体。在RReLU中，负值的斜率在训练中是随机的，在之后的测试中就变成了固定的了。RReLU的亮点在于，在训练环节中，aji是从一个均匀的分布U(I,u)中随机抽取的数值。
+**RReLU（随机纠正线性单元）**也是Leaky ReLU的一个变体。在RReLU中，负值的斜率在训练中是随机的，在之后的测试中就变成了固定的了。RReLU的亮点在于，在训练环节中，$\alpha_{ji}$ 是从一个均匀的分布U(I,u)中随机抽取的数值。
 
 
 
