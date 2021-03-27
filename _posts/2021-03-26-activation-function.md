@@ -50,7 +50,11 @@ tanh为双曲正切函数，其英文读作Hyperbolic Tangent。tanh和 sigmoid 
 
 #### **Relu(Rectified Linear Unit)函数——修正线性单元函数**
 
-​					$\operatorname{ReLU}(z)=\left\{\begin{array}{l}z, z>0 \\ 0, \text { otherwise }\end{array}\right.$
+​	$$\operatorname{ReLU}(z)=\left\{\begin{array}{l}z, z>0 \\ 0, \text { otherwise }\end{array}\right.$$
+
+
+
+
 
 ![image-20210326215025538](https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210326215025538.png)
 
@@ -82,7 +86,7 @@ tanh为双曲正切函数，其英文读作Hyperbolic Tangent。tanh和 sigmoid 
 
 **Leaky ReLU**
 
-$f(x)=\left\{\begin{array}{ll}x, & \text { if } x \geq 0 \\ \alpha x, & \text { if } x<0\end{array}\right.$
+​		$$f(x)=\left\{\begin{array}{ll}x, & \text { if } x \geq 0 \\ \alpha x, & \text { if } x<0\end{array}\right.$$
 
 $\alpha$ 为常数，一般设置 0.01。这个函数通常比 Relu 激活函数效果要好，但是效果不是很稳定，所以在实际中 Leaky ReLu 使用的并不多。
 
@@ -94,7 +98,7 @@ $\alpha$ 为常数，一般设置 0.01。这个函数通常比 Relu 激活函数
 
 #### ELU (Exponential Linear Units) 函数
 
-$f(x)=\left\{\begin{array}{ll}x, & \text { if } x>0 \\ \alpha\left(e^{x}-1\right), & \text { otherwise }\end{array}\right.$
+$$f(x)=\left\{\begin{array}{ll}x, & \text { if } x>0 \\ \alpha\left(e^{x}-1\right), & \text { otherwise }\end{array}\right.$$
 
 ![image-20210326221045623](https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210326221045623.png)
 
