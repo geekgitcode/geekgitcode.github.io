@@ -50,7 +50,7 @@ tanh为双曲正切函数，其英文读作Hyperbolic Tangent。tanh和 sigmoid 
 
 #### **Relu(Rectified Linear Unit)函数——修正线性单元函数**
 
-![image-20210327123133779](C:\Users\74116\AppData\Roaming\Typora\typora-user-images\image-20210327123133779.png)
+![image-20210327123133779](https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210327123133779.png)
 
 
 
@@ -86,7 +86,7 @@ tanh为双曲正切函数，其英文读作Hyperbolic Tangent。tanh和 sigmoid 
 
 **Leaky ReLU**
 
-​							![image-20210327123119834](C:\Users\74116\AppData\Roaming\Typora\typora-user-images\image-20210327123119834.png)
+​							![image-20210327123119834](https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210327123119834.png)
 
 $\alpha$ 为常数，一般设置 0.01。这个函数通常比 Relu 激活函数效果要好，但是效果不是很稳定，所以在实际中 Leaky ReLu 使用的并不多。
 
@@ -107,10 +107,6 @@ $\alpha$ 为常数，一般设置 0.01。这个函数通常比 Relu 激活函数
 不会有Dead ReLU问题 输出的均值接近0，zero-centered
 
 它的一个小问题在于计算量稍大。类似于Leaky ReLU，理论上虽然好于ReLU，但在实际使用中目前并没有好的证据ELU总是优于ReLU。
-
-
-
-
 
 
 
