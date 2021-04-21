@@ -125,4 +125,120 @@ public:
     }
 };
 ```
+[N诺OJ 循环链表](http://noobdream.com/DreamJudge/Issue/page/1018/)
+
+[洛谷约瑟夫环](https://www.luogu.com.cn/problem/P1996)
+
+```
+循环链表
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+struct node{
+	int num;
+	node* next;
+};
+
+node* create(int N){
+    node* head = NULL;
+    head = new node;
+    head->num = 1;
+    head->next = NULL;
+    node* curr = head;
+    for(int i=2;i<=N;i++){
+        node* temp;
+        temp = new node;
+        temp->num = i;
+        temp->next = NULL;
+        curr->next = temp;
+        curr = curr->next;
+    }
+    curr->next = head;
+    return head;
+}
+
+int main(){
+	int N;
+	cin>>N;
+    node* head = create(N); 
+    node *p = head;
+    //区分p->next!=p和p->next!=head的使用条件
+    while(p->next!=p){
+        node *temp = p->next;
+        p = p->next->next;
+        temp->next = p->next;
+        node* tempdel = p;
+        p = p->next;
+        delete tempdel;
+    }
+    cout<<p->num;
+    return 0;
+}
+
+//约瑟夫环问题 
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <cstdio>
+#include <cstring>
+using namespace std;
+
+struct node{
+	int num;
+	node* next;
+};
+
+// 创建单循环链表
+node* create(int N){
+    node* head = NULL;
+    head = new node;
+    head->num = 1;
+    head->next = NULL;
+    node* curr = head;
+    for(int i=2;i<=N;i++){
+        node* temp;
+        temp = new node;
+        temp->num = i;
+        temp->next = NULL;
+        curr->next = temp;
+        curr = curr->next;
+    }
+    
+    curr->next = head;
+    return head;
+}
+
+int main(){
+	int n,m;
+	cin>>n>>m;
+    node* head = create(n); 
+    node *p,*q;
+    p = head;
+    q = head;
+    //先找尾节点
+    while(q->next!=head){
+        q = q->next;
+    }
+    int cnt = 0;int num=0;
+    while(cnt!=n){
+        num++;
+        //不出列
+        if(num%m!=0){
+            p = p->next;
+            q = q->next;
+        }
+        //出列
+        else{
+            //是否打印出列顺序
+            //cout<<p->num<<" ";
+            q->next = p->next;
+            p = q->next;
+            cnt++;
+        }
+    }
+    cout<< p->num;
+    return 0;
+}
+```
 
