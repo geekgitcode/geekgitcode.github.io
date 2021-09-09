@@ -27,11 +27,14 @@ tags: LeetCode
 ![image-20210301102922883](https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210301102922883.png)
 
 ```
-for(int i = 1; i <= n; ++i) 
+//sum[i] 表示从a[0]+...+a[i];
+//sum[L,R]= s[R] - s[L-1]
+
+sum[0] = a[0];
+for(int i = 1; i < n; ++i) 
 	sum[i] = sum[i - 1] + a[i];　　//O(n)
 
 //所以每次我们询问区间[L,R] 的和,只需要计算s[R] - s[L-1] 就可以了. 
-
 while(m--)　　　　　　　　//O(m)
 {
 	int L, R; 
