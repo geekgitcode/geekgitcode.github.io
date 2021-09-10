@@ -179,7 +179,54 @@ public:
 };
 ```
 
+新模板 树状数组是从1开始 注意查询的时候索引相对应+1
 
+```
+class NumArray {
+public:
+    vector<int> tree;
+
+    int lowbit(int x) {
+        return x & -x;
+    }
+    // 查询前缀和
+    int query(int x) {
+        int ans = 0;
+        for(int i = x; i > 0; i -= lowbit(i))
+            ans += tree[i];
+        return ans;
+    }
+	// 在树状数组 x 位置中增加值 u
+    void add(int x, int u) {
+        for(int i = x; i <= n; i += lowbit(i))
+            tree[i] += u;
+    }
+
+    vector<int> nums;
+    int n;
+
+    NumArray(vector<int>& nums) {
+        this->nums = nums;
+        n = nums.size();
+        tree.resize(n+1, 0);
+        // 初始化「树状数组」，树状数组是从 1 开始
+        for(int i = 0; i < n; i++)
+            add(i+1, nums[i]);
+    }
+    
+    //建完树后更新数组 原有的值是 nums[i]，要使得修改为 val，需要增加 val - nums[i]
+    void update(int index, int val) {
+        add(index+1, val-nums[index]);
+        nums[index] = val;
+    }
+    
+    //区间查询 
+    int sumRange(int left, int right) {
+        return query(right+1) - query(left);
+    }
+
+};
+```
 
 #### **相关题目：**
 
