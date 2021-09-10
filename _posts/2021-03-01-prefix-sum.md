@@ -27,14 +27,18 @@ tags: LeetCode
 ![image-20210301102922883](https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210301102922883.png)
 
 ```
-//sum[i] 表示从a[0]+...+a[i];
+//a数组是数字数组，如果从a[0]开始则为a[i-1]，如果从1开始为a[i]
+//sum[i] 表示从a[0]+...+a[i]; i从1->n
 //sum[L,R]= s[R] - s[L-1]
 
-sum[0] = a[0];
-for(int i = 1; i < n; ++i) 
-	sum[i] = sum[i - 1] + a[i];　　//O(n)
 
-//所以每次我们询问区间[L,R] 的和,只需要计算s[R] - s[L-1] 就可以了. 
+for(int i = 1; i <= n; ++i) 
+	sum[i] = sum[i - 1] + a[i-1];　　//O(n)
+
+//所以每次我们询问区间[L,R] 的和,只需要计算s[R+1] - s[L] 就可以了. 
+//L和R注意从0开始还是从1开始
+//从0开始s[R+1] - s[L], 可以先R++,L++
+//从1开始s[R] - s[L-1]
 while(m--)　　　　　　　　//O(m)
 {
 	int L, R; 
@@ -50,8 +54,10 @@ while(m--)　　　　　　　　//O(m)
 
 
 ```
-DP[i][j]=DP[i-1][j]+DP[i][j-1]-DP[i-1][j-1]+map[i][j]
+mat从0开始
+sum从1开始
 //求原点到i，j的矩形和
+//sum[i][j] = sum[i-1][j]+sum[i][j-1]-sum[i-1][j-1]+mat[i-1][j-1]
 for i in range(1, m + 1):
     for j in range(1, n + 1):
         sum[i][j] = mat[i - 1][j - 1] + sum[i - 1][j] + sum[i][j - 1] - sum[i - 1][j - 1]
@@ -64,7 +70,11 @@ for i in range(1, m + 1):
 ![image-20210301111355155](https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20210301111355155.png)
 
 ```
-求点(x1,y1)到(x2,y2)的矩形和
+求点(x1,y1)到(x2,y2)的矩形和 sum从1开始
+//特殊记忆方法如下
+//sum[i][j] = sum[i-1][j]+sum[i][j-1]-sum[i-1][j-1]+mat[i-1][j-1]
+//mat[i-1][j-1] = sum[i][j]-sum[i-1][j]-sum[i][j-1]+sum[i-1][j-1]
+//将(x1,y1),(x2,y2)代入上式 
 
 sum[x2][y2]-sum[x1-1][y2]-sum[x2][y1-1]+sum[x1-1][y1-1]
 ```
