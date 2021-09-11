@@ -289,6 +289,50 @@ int main(){
 	}
 	return 0;
 }
+
+//离散化
+class Solution {
+public:
+    vector<int> tree;
+    int n;
+
+    int lowbit(int x){
+        return x&(-x);
+    }
+
+    void add(int x, int v){
+        for(int i=x;i<=n;i+=lowbit(i))
+            tree[i] += v;
+    }
+
+    int query(int x){
+        int ans = 0;
+        for(int i=x;i>0;i-=lowbit(i))
+            ans += tree[i];
+        return ans;
+    }
+
+    vector<int> countSmaller(vector<int>& nums) {
+        //离散化
+        n = nums.size();
+        vector<int> mapping(nums.begin(),nums.end());
+        sort(nums.begin(),nums.end());
+        nums.erase(unique(nums.begin(),nums.end()),nums.end());
+        for(int i=0;i<n;i++)
+            mapping[i] = lower_bound(nums.begin(),nums.end(),mapping[i])-nums.begin()+1;
+
+        tree.resize(n+1);
+
+        vector<int> ans(n);
+        for(int i=n-1;i>=0;i--){
+            //当前位置前面的桶就是小于当前位置的数
+            ans[i] = query(mapping[i]-1);
+            add(mapping[i],1);
+        }
+
+        return ans;
+    }
+};
 ```
 
 #### 参考资料
@@ -300,4 +344,8 @@ int main(){
 [youtube](https://www.youtube.com/watch?v=CWDQJGaN1gY)
 
 [github](https://github.com/mission-peace/interview/blob/master/src/com/interview/tree/FenwickTree.java)
+
+[bit做逆序对问题题解](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/solution/chi-san-hua-shu-zhuang-shu-zu-pythonshi-xian-by-mi/)
+
+[bit一些应用](https://zhuanlan.zhihu.com/p/344360991)
 
