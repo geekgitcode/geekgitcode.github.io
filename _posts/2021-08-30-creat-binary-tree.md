@@ -392,5 +392,55 @@ int main(int argc, const char * argv[]) {
 }
 ```
 
+数组二叉树
+
+```
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+
+int cnt = 0;
+int a[100];
+int b[100];
+int c[100];
+int d[100];
+
+void postOrder(int i){
+    if (b[2*i+1] != -1)
+       postOrder(2*i+1);
+   c[i] = a[cnt++];
+   if (b[2*i+2] != -1)
+       postOrder(2*i+2);
+}
+
+void preorder(int i){
+   d[i] = a[cnt++];
+   if (b[2*i+1] != -1)
+       preorder(2*i+1);
+   if (b[2*i+2] != -1)
+       preorder(2*i+2);
+}
+
+int main() {
+    int n;
+   	cin>>n;
+   	memset(b, -1, sizeof(b));
+   	memset(c, -1, sizeof(c));
+   	for (int i=0; i<n; i++){
+       	cin>>a[i];
+       	b[i] = 1;
+  	}
+   	sort(a, a+n);
+   	preorder(0);
+   	for (int i=0; i<n; i++){
+       	if (b[i] != -1){
+           	cout<<d[i]<<" ";
+     	}
+   	}
+   	return 0;
+}
+```
+
 [N诺1109](http://www.noobdream.com/DreamJudge/Issue/page/1109/)
 
