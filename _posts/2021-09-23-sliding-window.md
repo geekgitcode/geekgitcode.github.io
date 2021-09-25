@@ -9,7 +9,11 @@ tags: LeetCode
 
 > Sliding Window
 
-滑动窗口（双指针）
+**注意双指针是基于一个序列还是两个序列**
+
+**两个序列：**i, j分别在两个不同的序列上游走  [例题](https://www.acwing.com/problem/content/2818/)
+
+**一个序列：**滑动窗口，在一个序列上游走
 
 ```cpp
 int left = 0, right = 0;
