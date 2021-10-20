@@ -18,6 +18,38 @@ tags: LeetCode
 
 [46. 全排列](https://leetcode-cn.com/problems/permutations/)
 
+```
+http://codeup.hustoj.com/problem.php?cid=100000608&pid=0
+#include<bits/stdc++.h>
+using namespace std;
+
+int ans[11];
+bool visited[11];
+void dfs(int index, int n){
+    if(index==n+1){
+        for(int i=1;i<n;i++)
+            cout<<ans[i]<<" ";
+        cout<<ans[n]<<endl;
+        return;
+    }
+    for(int i=1;i<=n;i++){
+        if(visited[i])
+            continue;
+        ans[index] = i;
+        visited[i] = 1;
+        dfs(index+1,n);
+        visited[i] = 0;
+    }
+}
+
+int main(){
+    int n;
+    cin>>n;
+    dfs(1,n);
+    return 0;
+}
+```
+
 [47. 全排列 II ](https://leetcode-cn.com/problems/permutations-ii/)     思考为什么造成了重复，如何在搜索之前就判断这一支会产生重复；
 
 [60. 第k个排列](https://leetcode-cn.com/problems/permutation-sequence/)     利用了剪枝的思想，减去了大量枝叶，直接来到需要的叶子结点；
@@ -27,6 +59,33 @@ tags: LeetCode
 [40. 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)
 
 [77. 组合](https://leetcode-cn.com/problems/combinations/)
+
+```
+http://codeup.hustoj.com/problem.php?cid=100000608&pid=1
+#include<bits/stdc++.h>
+using namespace std;
+int ans[22];
+void dfs(int start, int index, int n,int r){
+    if(index==r+1){
+        for(int i=1;i<r;i++)
+            cout<<ans[i]<<" ";
+        cout<<ans[r]<<endl;
+        return;
+    }
+    
+    for(int i=start;i<=n-r+index;i++){
+        ans[index] = i;
+        dfs(i+1,index+1,n,r);
+        //ans.pop_back();
+    }
+}
+int main(){
+    int n,r;
+    cin>>n>>r;
+    dfs(1,1,n,r);
+    return 0;
+}
+```
 
 [78. 子集](https://leetcode-cn.com/problems/subsets/)
 
