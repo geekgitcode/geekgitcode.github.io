@@ -85,7 +85,7 @@ tags: DL
 
 ![image-20211012175051819](https://gitee.com/GoPrime/imagecloud/raw/master/img/image-20211012175051819.png)
 
-交叉熵就是真值分布的熵与KL散度的和, 而真值的熵是确定的,与模型的参数θ无关,所以梯度下降求导时,  $\nabla D_{KL}(P||Q) = \nabla H(P,Q)$， 即最小化交叉熵与最小化KL散度是一样的
+交叉熵就是真值分布的熵与KL散度的和, 而真值的熵是确定的,与模型的参数 $θ$ 无关,所以梯度下降求导时,  $\nabla D_{KL}(P||Q) = \nabla H(P,Q)$， 即最小化交叉熵与最小化KL散度是一样的
 
 
 
