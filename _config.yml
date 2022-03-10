@@ -60,8 +60,8 @@ postPatterns: 'circuitBoard'
 sns:
   twitter: '//www.twitter.com/downeykking'
   instagram: '//www.instagram.com/downeykking'
-  github: '//https://github.com/downeykking'
-  zhihu: '//https://www.zhihu.com/people/goprime'
+  github: '//github.com/downeykking'
+  zhihu: '//www.zhihu.com/people/goprime'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
