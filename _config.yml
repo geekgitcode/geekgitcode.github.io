@@ -23,13 +23,13 @@ nav:
 
 # Footer
 footer:
-  since: 2021
+  since: 2020
 
 # Author 配置博主信息
 author: 'downey'
 nickname: ''
 bio: '吹灭读书灯 一身都是月'
-avatar: '/assets/img/new_profile.jpg'
+avatar: '/assets/img/3.jpg'
 
 # Search
 search: true
@@ -60,7 +60,8 @@ postPatterns: 'circuitBoard'
 sns:
   twitter: '//www.twitter.com/downeykking'
   instagram: '//www.instagram.com/downeykking'
-  #github: '//github.com/downeykking'
+  github: '//https://github.com/downeykking'
+  zhihu:'//https://www.zhihu.com/people/goprime'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
