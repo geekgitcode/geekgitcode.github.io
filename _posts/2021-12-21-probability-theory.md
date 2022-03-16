@@ -9,6 +9,7 @@ tags: DL
 ---
 
 > 概率论相关知识 持续更新~
+
 #### **独立同分布：**
 
 随机过程中，任何时刻的取值都为随机变量，如果这些随机变量服从同一分布，并且互相独立，那么这些随机变量是独立同分布，随机变量X1，X2的取值满足独立，且属于同一分布序列，X1的取值不影响X2的取值，拥有同样的概率分布函数
@@ -101,7 +102,7 @@ tags: DL
 
 **当特征值为连续型时**：
 
-通常的假设这些连续数值为高斯分布。例如，假设训练集中某个连续特征 ![[公式]](https://www.zhihu.com/equation?tex=x) 。首先我们对数据类别分类，然后计算每个类别中的 ![[公式]](https://www.zhihu.com/equation?tex=x) 均值和方差。令 ![[公式]](https://www.zhihu.com/equation?tex=%5Cmu+_%7Bc%7D) 表示为 ![[公式]](https://www.zhihu.com/equation?tex=x) 在**c**类上的均值， ![[公式]](https://www.zhihu.com/equation?tex=%5Csigma+_%7Bc%7D%5E%7B2%7D) 表示为 ![[公式]](https://www.zhihu.com/equation?tex=x) 在**c**类上的方差。在给定类中某个值的概率 ![[公式]](https://www.zhihu.com/equation?tex=p%3D%EF%BC%88x%3Dv%7Cc%EF%BC%89)，可以通过将 ![[公式]](https://www.zhihu.com/equation?tex=v) 表示为均值为 ![[公式]](https://www.zhihu.com/equation?tex=%5Cmu+_%7Bc%7D) 方差为 ![[公式]](https://www.zhihu.com/equation?tex=%5Csigma+_%7Bc%7D%5E%7B2%7D) 的正态分布计算出来。如下，
+通常的假设这些连续数值为高斯分布。例如，假设训练集中某个连续特征 $x$ 。首先我们对数据类别分类，然后计算每个类别中的 $x$ 均值和方差。令 $\mu_c$ 表示为 $x$ 在**c**类上的均值，$\sigma_{c}^{2}$ 表示为 $x$ 在**c**类上的方差。在给定类中某个值的概率 $p=(x=v \mid c)$，可以通过将 $v$ 表示为均值为 $\mu_c$方差为 $\sigma_{c}^{2}$的正态分布计算出来。如下，
 
 ![img](https://pic2.zhimg.com/80/v2-03c4c2b143f7fd32103937b8e01d6445_1440w.jpg)
 
@@ -113,29 +114,29 @@ tags: DL
 
 概率用于在已知一些参数的情况下，预测接下来的观测所得到的结果，而似然性 则是用于在已知某些观测所得到的结果时，对有关事物的性质的参数进行估计。在这种意义上，似然函数可以理解为条件概率的逆反。
 
-似然函数是给定联合样本值![[公式]](https://www.zhihu.com/equation?tex=%5Ctextbf%7Bx%7D)下关于(未知)参数![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta) 的函数：![[公式]](https://www.zhihu.com/equation?tex=L%28%5Ctheta+%7C+%5Ctextbf%7Bx%7D%29+%3D+f%28%5Ctextbf%7Bx%7D+%7C+%5Ctheta%29)
+似然函数是给定联合样本值$x$下关于(未知)参数$\theta$的函数:$L(\theta \mid \mathbf{x})=f(\mathbf{x} \mid \theta)$
 
-这里的小![[公式]](https://www.zhihu.com/equation?tex=%5Ctextbf%7Bx%7D)是指联合样本随机变量![[公式]](https://www.zhihu.com/equation?tex=%5Ctextbf%7BX%7D)取到的值，即![[公式]](https://www.zhihu.com/equation?tex=%5Ctextbf%7BX%7D+%3D+%5Ctextbf%7Bx%7D)；
+这里的小$x$是指联合样本随机变量$X$取到的值，即 $X = x$
 
-这里的![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta)是指未知参数，它属于参数空间；
+这里的$\theta$是指未知参数，它属于参数空间；
 
-这里的![[公式]](https://www.zhihu.com/equation?tex=f%28%5Ctextbf%7Bx%7D%7C%5Ctheta%29)是一个密度函数，特别地，它表示(给定)![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta)下关于联合样本值![[公式]](https://www.zhihu.com/equation?tex=%5Ctextbf%7Bx%7D)的联合密度函数。
+这里的$f(\mathbf{x} \mid \theta)$是一个密度函数，特别地，它表示(给定)$\theta$下关于联合样本值$x$的联合密度函数。
 
-所以从定义上，似然函数和密度函数是完全不同的两个**数学对象**：前者是关于![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta)的函数，后者是关于![[公式]](https://www.zhihu.com/equation?tex=%5Ctextbf%7Bx%7D)的函数。所以这里的等号![[公式]](https://www.zhihu.com/equation?tex=%3D) 理解为**函数值形式**的相等，而不是两个函数本身是同一函数(根据函数相等的定义，函数相等当且仅当定义域相等并且对应关系相等)。
+所以从定义上，似然函数和密度函数是完全不同的两个**数学对象**：前者是关于$\theta$的函数，后者是关于$x$的函数。所以这里的等号$x$理解为**函数值形式**的相等，而不是两个函数本身是同一函数(根据函数相等的定义，函数相等当且仅当定义域相等并且对应关系相等)。
 
-**概率**(密度)表达给定![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta)下样本随机向量![[公式]](https://www.zhihu.com/equation?tex=%5Ctextbf%7BX%7D+%3D+%5Ctextbf%7Bx%7D)的**可能性**，而**似然**表达了给定样本![[公式]](https://www.zhihu.com/equation?tex=%5Ctextbf%7BX%7D+%3D+%5Ctextbf%7Bx%7D)下参数![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_1)(相对于另外的参数![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_2))为真实值的**可能性**。我们总是对随机变量的取值谈**概率**，而在非贝叶斯统计的角度下，参数是一个实数而非随机变量，所以我们一般不谈一个参数的**概率**
+**概率**(密度)表达给定$\theta$下样本随机向量$X = x$的**可能性**，而**似然**表达了给定样本$X = x$下参数$\theta_1$(相对于另外的参数$\theta_2$为真实值的**可能性**。我们总是对随机变量的取值谈**概率**，而在非贝叶斯统计的角度下，参数是一个实数而非随机变量，所以我们一般不谈一个参数的**概率**
 
-极大似然是**频率学派的参数估计方法**，设总体分布为 ![[公式]](https://www.zhihu.com/equation?tex=f%28X%3B%5Ctheta%29) ， ![[公式]](https://www.zhihu.com/equation?tex=x_1%2C%5Cdots%2Cx_n) 是从总体分布中抽出的样本， 那么样本![[公式]](https://www.zhihu.com/equation?tex=%28x_1%2C%5Cdots%2Cx_n%29)的联合分布为： ![[公式]](https://www.zhihu.com/equation?tex=L%28x_1%2Cx_2%2C%5Cdots%2Cx_n%3B%5Ctheta%29%3Df%28x_1%3B%5Ctheta%29+f%28x_2%3B%5Ctheta%29+%5Ccdots+f%28x_n%3B%5Ctheta%29)
+极大似然是**频率学派的参数估计方法**，设总体分布为 $f(X ; \theta), x_{1}, \ldots, x_{n}$ 是从总体分布中抽出的样本， 那么样本$\left(x_{1}, \ldots, x_{n}\right)$的联合分布为：$L\left(x_{1}, x_{2}, \ldots, x_{n} ; \theta\right)=f\left(x_{1} ; \theta\right) f\left(x_{2} ; \theta\right) \cdots f\left(x_{n} ; \theta\right)$
 
-当固定 ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta) 时，看作是 ![[公式]](https://www.zhihu.com/equation?tex=x_1%2C%5Cdots%2Cx_n) 的函数时，L是一个概率密度函数。
+当固定 $\theta$时，看作是 $x_{1},\ldots, x_{n}$ 的函数时，L是一个概率密度函数。
 
-当固定 ![[公式]](https://www.zhihu.com/equation?tex=x_1%2C%5Cdots%2Cx_n) 时， 把 L 看作是 ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta) 的函数，由于 ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta) 有一定的值，但是未知，并非随机变量（频率学派观点），不能叫做概率，而叫做似然（likelihood）。
+当固定 $x_{1},\ldots, x_{n}$ 时， 把 L 看作是$\theta$的函数，由于$\theta$有一定的值，但是未知，并非随机变量（频率学派观点），不能叫做概率，而叫做似然（likelihood）。
 
 使得likelihood最大的那个点记为：
 
-![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta%5E%2A%3D+argmax+L%28x_1%2C%5Cdots%2Cx_n%3B%5Ctheta%29)
+$$\theta^{*}=\operatorname{argmax} L\left(x_{1}, \ldots, x_{n} ; \theta\right)$$
 
-并将其并作为 ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta) 的估计值，在已有的样本 ![[公式]](https://www.zhihu.com/equation?tex=x_1%2C%5Cdots%2Cx_n) 条件下， ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta%5E%2A) 就叫做 ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta) 的**极大似然估计**。
+并将其并作为 $\theta$ 的估计值，在已有的样本$x_{1}, \ldots, x_{n}$ 条件下，  $\theta^{*}$就叫做$\theta$ 的**极大似然估计**。
 
 
 
@@ -149,7 +150,7 @@ tags: DL
 
 生成模型：
 优点：
-1）生成给出的是联合分布![[公式]](https://www.zhihu.com/equation?tex=P%28%5Ctilde%7Bx%7D%2C%5Ctilde%7Bc%7D%29+)，不仅能够由联合分布计算条件分布![[公式]](https://www.zhihu.com/equation?tex=P%28%5Ctilde%7Bc%7D%7C%5Ctilde%7Bx%7D%29)（反之则不行），还可以给出其他信息，比如可以使用![[公式]](https://www.zhihu.com/equation?tex=P%28%5Ctilde%7Bx%7D+%29%3D%5Csum_%7Bi%3D1%7D%5E%7Bk%7D%7BP%28%5Ctilde%7Bx%7D%7C%5Ctilde%7Bc%7D_%7Bi%7D%29%7D+)![[公式]](https://www.zhihu.com/equation?tex=%2AP%28%5Ctilde%7Bc_i%7D+%29)来计算边缘分布![[公式]](https://www.zhihu.com/equation?tex=P%28%5Ctilde%7Bx%7D+%29)。如果一个输入样本的边缘分布![[公式]](https://www.zhihu.com/equation?tex=P%28%5Ctilde%7Bx%7D+%29)很小的话，那么可以认为学习出的这个模型可能不太适合对这个样本进行分类，分类效果可能会不好，这也是所谓的*outlier detection。*
+1）生成给出的是联合分布$P(\tilde{x}, \tilde{c})$，不仅能够由联合分布计算条件分布$P(\tilde{c} \mid \tilde{x})$（反之则不行），还可以给出其他信息，比如可以使用来$P(\tilde{x})=\sum_{i=1}^{k} P\left(\tilde{x} \mid \tilde{c}_{i}\right) * P\left(\tilde{c}_{i}\right)$计算边缘分布$P(\tilde{x})$。如果一个输入样本的边缘分布$P(\tilde{x})$很小的话，那么可以认为学习出的这个模型可能不太适合对这个样本进行分类，分类效果可能会不好，这也是所谓的*outlier detection。*
 2）生成模型收敛速度比较快，即当样本数量较多时，生成模型能更快地收敛于真实模型。
 3）生成模型能够应付存在隐变量的情况，比如混合高斯模型就是含有隐变量的生成方法。
 
@@ -161,7 +162,7 @@ tags: DL
 优点：
 1）与生成模型缺点对应，首先是节省计算资源，另外，需要的样本数量也少于生成模型。
 2）准确率往往较生成模型高。
-3）由于直接学习![[公式]](https://www.zhihu.com/equation?tex=P%28%5Ctilde%7Bc%7D%7C%5Ctilde%7Bx%7D+%29)，而不需要求解类别条件概率，所以允许我们对输入进行抽象（比如降维、构造等），从而能够简化学习问题。
+3）由于直接学习$P(\tilde{c} \mid \tilde{x})$，而不需要求解类别条件概率，所以允许我们对输入进行抽象（比如降维、构造等），从而能够简化学习问题。
 
 缺点：
 1）是没有生成模型的上述优点。
